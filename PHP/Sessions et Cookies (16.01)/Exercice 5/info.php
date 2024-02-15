@@ -1,0 +1,34 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION["login"])) {
+    echo "Vous êtes connecté(e), bienvenue.";
+} else {
+    header('location: index.php');
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 5</title>
+</head>
+<body>
+    <a href="info.php?logout=true">Deconnexion</a>
+
+    <?php
+
+    if (isset($_GET["logout"])) {
+        session_destroy();
+        header('location: index.php');
+    }
+    ?>
+    
+</body>
+</html>
+

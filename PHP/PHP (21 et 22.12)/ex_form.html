@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire</title>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Classiques</legend>
+            <p><label for="texte">Texte </label><input id="texte" type="text"><br></p>
+            <p><label for="email">Email </label><input id="email" type="mail" required><br></p>
+            <p><label for="tel">Tel </label><input id="tel" type="tel" pattern="[0-9]{10}" required></p><br>
+            <p><label for="mdp">Mot de passe </label><input id="mdp" type="password" required></p><br>
+        </fieldset>
+
+        <p><input type="checkbox" id="case1" name="case1" value="OUI"><label for="case1">Je suis content d'être
+                là</label></p>
+
+        <p>Vous êtes : </p>
+        <p><input type="radio" id="homme" name="genre">
+            <label for="homme">Un homme</label><br>
+        <p><input type="radio" id="femme" name="genre">
+            <label for="femme">Une femme</label><br>
+        <p><input type="radio" id="autre" name="genre">
+            <label for="autre">Autre</label><br>
+
+        <p><label for="fichier">Envoyer un fichier :</label><input type="file" id="fichier" name="fichier"></p>
+
+        <p><label for="site">Site internet :</label><input type="url" id="site" name="site"></p>
+
+        <p><label for="doigts">Combien de doigts avez-vous sur votre main droite (entre 1 et 5) ?</label><input
+                type="number" name="nombre" min="1" max="5"></p>
+
+        <p><label for="anniv">Ma date de naissance : </label><input type="date" id="anniv" name="anniv" min="1901-01-01"
+                max="2023-12-21"></p>
+
+        <p><label for="local">Date et heure locale :</label><input type="datetime-local" id="date_heure"
+                name="date_heure"></p>
+
+        <p><label for="mois">Mois et année de votre plus haut diplôme :</label><input type="month" id="mois"
+                name="mois"></p>
+
+        <p><label for="rdv">Heure de rendez-vous :</label><input type="time" id="rdv " name="rdv"></p>
+
+        <p><label for="week">Prochaine semaine de vacances :</label><input type="week" id="week" name="week"></p>
+
+        <p><label for="favcolor">Ma couleur préférée :</label><input type="color" id="fav_color" name="fav_color"></p>
+
+        <p><label for="livres">Combien de livres lisez-vous par mois : 0</label><input type="range" id="livres"
+                name="livres" min="0" max="10" value="5">10
+        </p>
+
+        <p><label for="gsearch">Recherche Google :</label><input type="search" id="gsearch" name="gsearch"
+                list="malist"></p>
+        <datalist id="malist">
+            <option value="Chocolat">
+            <option value="Escalade">
+            <option value="Plage">
+        </datalist>
+
+        <p>Avancée : <progress id="progress" max="100"><span>0</span>%</progress></p>
+
+        <p><input type="button" value="Clic moi" onclick="msg()"></p>
+
+        <p><input type="image" src="img_submit.gif" alt="Submit" width="48" height="48"></p>
+
+        <p><button type="button" onclik="alert('Ca chatouille toujours!')">Clic moi aussi !</button></p>
+
+        <p><label for="repas">Choisir un repas : </label></p>
+        <select id="repas">
+            <optgroup label="Encas">
+                <option value="collation">Collation</option>
+                <option value="gouter">Goûter</option>
+            </optgroup>
+            <optgroup label for="Repas principaux">
+                <option value="petit_dejeuner">Petit déjeuner</option>
+                <option value="brunch">Brunch</option>
+                <option value="dejeuner">Déjeuner</option>
+                <option value="diner">Dîner</option>
+            </optgroup>
+        </select></p>
+
+        <p><label for="message">Mon message : </label>
+            <textarea id="message" rows="10" cols="50">
+        J'ai un message à faire passer
+        </textarea>
+        </p>
+
+        <p><label for="invite">Nombre d'invités : </label>
+            <meter id="invite" value="1" min="0" max="10" low="2" high="8" optimum="9">1 sur 10</meter>
+        </p>
+
+    </form>
+</body>
+
+</html>
