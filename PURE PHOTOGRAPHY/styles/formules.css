@@ -1,0 +1,67 @@
+#formules h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#formules h3, h4 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.formules-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 19px;
+    color: #5b5352;
+}
+  
+.formule {
+    flex: 1;
+    margin-right: 20px;
+    border: 1px solid #5b5352;
+    border-radius: 4px;
+    background-color: #fae7de;
+    padding: 20px;
+}
+  
+.prix-container {
+    text-align: center;
+}
+  
+.btn-prix {
+    padding: 10px 20px;
+    background-color: #5b5352;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 19px;
+    cursor: pointer;
+}
+  
+.btn-prix:hover {
+    background-color: #393434;
+}
+  
+.prix {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+ul {
+    list-style: inside;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 10px;
+}
+
+#formules p {
+    text-align: center;
+    font-size: 19px;
+}

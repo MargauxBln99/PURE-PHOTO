@@ -1,0 +1,50 @@
+#contact h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.contact_form {
+    position: relative;
+    background-color: #fae7de;
+    overflow: hidden;
+    border: 1px solid #5b5352;
+    padding: 20px;
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 4px;
+    font-size: 19px;
+}
+
+.contact_form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #5b5352;
+}
+
+.contact_form input[type="text"],
+.contact_form input[type="email"],
+.contact_form textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #5b5352;
+    border-radius: 4px;
+}
+
+.contact_form textarea {
+    height: 100px;
+}
+
+.contact_form input[type="submit"] {
+    background-color: #5b5352;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+    border-radius: 4px;
+    font-size: 19px;
+}
