@@ -26,30 +26,74 @@
 <?php
 
 $host = "localhost";
-$dbname = "test";
+$dbname = "pure-photography";
 $username = "root";
 $password = "";
 
-$conn = mysqli_connect($host, $username, $password, $dbname);
-if (!$conn) {
-    die("Echec de la connexion à la base de données");
+$utilisateur = "new_admin";
+$mdp = "password";
+
+$connexion = mysqli_connect($host, $username, $password, $dbname);
+
+if (mysqli_connect_error()) {
+    echo "Echec de la connexion à la base de données : " . mysqli_connect_error();
+    exit();
 }
-?>
 
-<?php
+// vérifier si l'admin existe déjà
 
-$sql = "SELECT * FROM users";
-$result = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<tr>";
-        echo "<td>" . $row["id"] . "</td>";
-        echo "<td>" . $row["username"] . "</td>";
-        echo "<td>" . $row["email"] . "</td>";
-        echo "<td>" . $row["role"] . "</td>";
-        echo "</tr>";
+$requeteExist = "SELECT * FROM admin WHERE NomUtilisateur = ?";
+$stmtExist = mysqli_prepare($connexion, $requeteExist);
+mysqli_stmt_bind_param($stmtExist, "s", $utilisateur);
+mysqli_stmt_execute($stmtExist);
+$resultatExist = mysqli_stmt_get_result($stmtExist);
+
+if ($resultatExist && mysqli_num_rows($resultatExist) > 0) {
+
+    // utilisateur trouvé
+    $row = mysqli_fetch_assoc($resultatExist);
+
+    // vérifier le mdp 
+
+    if (password_verify($mdp, $row['password'])) {
+
+        // accès autorisé
+    } else {
+
+        // mdp incorrect
+        echo "Mot de passe incorrect";
     }
-} else {
-    echo "Aucun utilisateur n'est enregistré.";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // ajouter un nouvel admin
+
+    //$requeteInsert = "INSERT INTO admin (NomUtilisateur, MDP) VALUES (?, ?)";
+    //$stmtInsert = mysqli_prepare($connexion, $requeteInsert);
+    //mysqli_stmt_bind_param($stmtInsert, "ss", $utilisateur, $mdpHache);
+    //mysqli_stmt_execute($stmtInsert);
+
+    //if (mysqli_affected_rows($connexion) > 0) {
+    //    echo "";
+    //} else {
+    //    echo "Une erreur s'est produite lors de l'ajout.";
+
+
 }
+
 ?>
