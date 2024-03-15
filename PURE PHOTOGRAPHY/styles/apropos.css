@@ -1,0 +1,11 @@
+#apropos h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#apropos p {
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.8;
+}

@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $header = "De : $email" . "\r\n";
 
     // envoyer l'e-mail
-    mail($adresseProfessionnelle, $sujet, $corpsEmail, $headers);
+    mail($adresseProfessionnelle, $sujet, $corpsEmail, $header);
 
     // afficher un message de succès
     echo "Merci ! Votre message a été envoyé avec succès.";
