@@ -13,14 +13,15 @@
     <h1>Espace Admin</h1>
 
     <h2>Ajouter du contenu</h2>
-    <form action="admin_space.php" method="POST" class="form_content">
+    <form action="admin_space.php" method="POST" class="form_content" enctype="multipart/form-data">
         <label for="titre">Titre : </label>
         <input type="text" name="titre" id="titre" required><br>
 
         <label for="contenu">Contenu : </label>
-        <textarea name="contenu" id="contenu" required></textarea><br>
-        <!-- provisoire, a changer en file -->
-
+        <div class="file_input">
+            <input type="file" name="fichier" id="fichier" required>
+            <label for="fichier" class="file_label">Choisir un fichier</label>
+        </div>
         <input type="submit" name="ajouter_contenu" value="Ajouter">
     </form>
 
