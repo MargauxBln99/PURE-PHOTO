@@ -19,6 +19,7 @@
 
         <label for="contenu">Contenu : </label>
         <textarea name="contenu" id="contenu" required></textarea><br>
+        <!-- provisoire, a changer en file -->
 
         <input type="submit" name="ajouter_contenu" value="Ajouter">
     </form>
