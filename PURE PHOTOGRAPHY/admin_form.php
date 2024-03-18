@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <h1>Espace Admin</h1>
+    <h1>Espace Administrateur</h1>
 
     <form action="connexion.php" method="POST" class="connexion_form">
         <label for="user">Utilisateur :</label>
