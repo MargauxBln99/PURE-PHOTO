@@ -7,43 +7,29 @@ $dbname = "pure-photography";
 $username = "root";
 $password = "";
 
-$utilisateur = "new_admin";
-$mdp = "password";
+$utilisateur = "NomUtilisateur";
+$mdp = "MDP";
 
-$connexion = mysqli_connect($host, $username, $password, $dbname);
+$conn = new mysqli($host, $username, $password, $dbname);
 
-if (mysqli_connect_error()) {
-    echo "Echec de la connexion à la base de données : " . mysqli_connect_error();
-    exit();
+if ($conn->connect_error) {
+    die("Erreur de connexion à la base de données : " . $conn->connect_error);
 }
 
-// vérifier si l'admin existe
+// vérifier si l'utilisateur est un admin
 
-$requeteExist = "SELECT * FROM admin WHERE NomUtilisateur = ?";
-$stmtExist = mysqli_prepare($connexion, $requeteExist);
-mysqli_stmt_bind_param($stmtExist, "s", $utilisateur);
-mysqli_stmt_execute($stmtExist);
-$resultatExist = mysqli_stmt_get_result($stmtExist);
+$username = $_POST['user'];
+$password = $_POST['password'];
 
-if ($resultatExist && mysqli_num_rows($resultatExist) > 0) {
+$verif = "SELECT * FROM admin WHERE NomUtilisateur = '$username' AND MDP = '$password'";
+$result = $conn->query($verif);
 
-    // utilisateur trouvé
-    $row = mysqli_fetch_assoc($resultatExist);
-
-    // vérifier le mdp 
-    if (password_verify($mdp, $row['password'])) {
-
-        // accès autorisé
-    } else {
-
-        // mdp incorrect
-        echo "Mot de passe incorrect";
-    }
-}
-
-if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
-
-    // rediriger vers l'espace admin
-
+if ($result->num_rows > 0) {
+    // l'utilisateur est un admin
     header("Location: admin_space.php");
+} else {
+    // l'utlisateur n'est pas un admin
+    echo "Identifiants invalides, veuillez réessayer.";
 }
+
+$conn->close();
