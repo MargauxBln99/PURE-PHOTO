@@ -61,3 +61,14 @@ main {
 section {
     margin-bottom: 40px;
 }
+
+@media screen and (max-width: 600px) {
+  .logo {
+    height: 100px;
+  }
+
+  nav ul {
+    width: 85%;
+    font-size: 18px;
+}
+}

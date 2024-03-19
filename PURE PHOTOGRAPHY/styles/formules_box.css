@@ -4,7 +4,8 @@
     font-weight: bold;
 }
 
-#formules h3, #formules h4 {
+#formules h3, 
+#formules h4 {
     text-align: center;
     font-size: 26px;
     font-weight: bold;
@@ -14,9 +15,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    font-size: 19px;
-    color: #5b5352;
 }
   
 .formule {
@@ -25,7 +23,10 @@
     border: 1px solid #5b5352;
     border-radius: 4px;
     background-color: #fae7de;
-    padding: 20px;
+}
+
+.formule > * {
+    padding: 1rem;
 }
 
 .prix-container {
@@ -64,5 +65,23 @@ li {
 #formules p {
     text-align: center;
     font-size: 19px;
+}
+
+@media screen and (max-width: 600px) {
+    .formules-container {
+        width: 100%;
+        padding: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .formule {
+        flex: 1 1 100%;
+    }
+
+    .formule > * {
+        padding: 0.5rem;
+    }
 }
 
