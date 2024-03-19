@@ -48,3 +48,40 @@
     border-radius: 4px;
     font-size: 19px;
 }
+
+@media only screen and (max-width: 600px) {
+    .contact_form label {
+      font-size: 16px;
+    }
+  
+    .contact_form input[type="text"],
+    .contact_form input[type="email"],
+    .contact_form textarea {
+      width: 90%; 
+      margin: 5px 0; 
+      font-size: 16px; 
+    }
+  
+    .contact_form input[type="submit"] {
+      width: 100%; 
+    }
+}
+  
+@media only screen and (min-width: 601px) {
+    .contact_form label {
+      font-size: 18px; 
+    }
+  
+    .contact_form input[type="text"],
+    .contact_form input[type="email"],
+    .contact_form textarea {
+      width: 70%;
+      margin: 10px 0;
+      font-size: 18px; 
+    }
+  
+    .contact_form input[type="submit"] {
+      width: auto; 
+    }
+}
+  
