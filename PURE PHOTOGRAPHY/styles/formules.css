@@ -4,15 +4,15 @@
     font-weight: bold;
 }
 
-#formules h3, h4 {
+#formules h3, #formules h4 {
     text-align: center;
     font-size: 26px;
     font-weight: bold;
 }
 
 .formules-container {
-    position: relative;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     font-size: 19px;
@@ -20,8 +20,8 @@
 }
   
 .formule {
-    flex: 1;
-    margin-right: 20px;
+    flex: 1 1 300px;
+    margin-bottom: 20px;
     border: 1px solid #5b5352;
     border-radius: 4px;
     background-color: #fae7de;
@@ -65,3 +65,4 @@ li {
     text-align: center;
     font-size: 19px;
 }
+
