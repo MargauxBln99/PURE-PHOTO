@@ -15,8 +15,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-right: 20px;
-    padding-left: 20px;
 }
   
 .formule {
