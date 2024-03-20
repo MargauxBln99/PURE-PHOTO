@@ -7,13 +7,11 @@ $dbname = "pure-photography";
 $username = "root";
 $password = "";
 
-$utilisateur = "NomUtilisateur";
-$mdp = "MDP";
-
-$conn = new mysqli($host, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Erreur de connexion à la base de données : " . $conn->connect_error);
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
 // vérifier si l'utilisateur est un admin
@@ -21,15 +19,24 @@ if ($conn->connect_error) {
 $username = $_POST['user'];
 $password = $_POST['password'];
 
-$verif = "SELECT * FROM admin WHERE NomUtilisateur = '$username' AND MDP = '$password'";
-$result = $conn->query($verif);
+try {
+    $stmt = $conn->prepare("SELECT * FROM admin WHERE NomUtilisateur = :username AND MDP = :password");
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':password', $password);
+    $stmt->execute();
 
-if ($result->num_rows > 0) {
-    // l'utilisateur est un admin
-    header("Location: admin_space.php");
-} else {
-    // l'utlisateur n'est pas un admin
-    echo "Identifiants invalides, veuillez réessayer.";
+    $rowCount = $stmt->rowCount();
+
+    if ($rowCount > 0) {
+        // l'utilisateur est un admin
+        header("Location: admin_contenu.php");
+        exit;
+    } else {
+        // l'utilisateur n'est pas un admin
+        echo "Identifiants invalides, veuillez réessayer.";
+    }
+} catch (PDOException $e) {
+    echo "Erreur : " . $e->getMessage();
 }
 
-$conn->close();
+$conn = null;

@@ -17,7 +17,8 @@ h1 {
     overflow: hidden;
     border: 1px solid #5b5352;
     padding: 20px;
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     margin: 0 auto;
     border-radius: 4px;
     font-size: 19px;
@@ -50,7 +51,15 @@ h1 {
     cursor: pointer;
     display: block;
     margin: 0 auto;
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
     border-radius: 4px;
     font-size: 19px;
+}
+
+@media screen and (max-width: 600px) {
+    .connexion_form {
+        padding: 10px; 
+        font-size: 16px; 
+    }
 }
