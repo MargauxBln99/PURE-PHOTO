@@ -2,6 +2,7 @@
     text-align: center;
     font-size: 30px;
     font-weight: bold;
+    color: #5b5352;
 }
 
 #formules h3, 
@@ -9,6 +10,7 @@
     text-align: center;
     font-size: 26px;
     font-weight: bold;
+    color: #5b5352;
 }
 
 .formules-container {
@@ -62,11 +64,13 @@ ul {
 li {
     padding: 10px;
     font-size: 19px;
+    color: #5b5352;
 }
 
 #formules p {
     text-align: center;
     font-size: 19px;
+    color: #5b5352;
 }
 
 @media screen and (max-width: 600px) {

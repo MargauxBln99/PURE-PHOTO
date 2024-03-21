@@ -9,6 +9,7 @@
 .footer-container p {
     margin: 0;
     font-size: 19px;
+    color: #5b5352;
 }
 
 @media screen and (max-width: 600px) {
