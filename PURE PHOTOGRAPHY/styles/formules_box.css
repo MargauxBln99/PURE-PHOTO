@@ -3,6 +3,7 @@
     font-size: 30px;
     font-weight: bold;
     color: #5b5352;
+    margin-bottom: 20px;
 }
 
 #formules h3, 
@@ -11,6 +12,7 @@
     font-size: 26px;
     font-weight: bold;
     color: #5b5352;
+    margin-bottom: 10px;
 }
 
 .formules-container {
@@ -20,12 +22,19 @@
 }
   
 .formule {
-    flex: 1 1 300px;
+    flex: 1 1 calc(33.33% - 20px);
     margin-bottom: 20px;
     border: 1px solid #5b5352;
     border-radius: 4px;
     background-color: #fae7de;
     margin: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.formule:hover {
+    transform: translateY(-5px);
 }
 
 .formule > * {
@@ -44,12 +53,13 @@
     border-radius: 4px;
     font-size: 19px;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
-  
+
 .btn-prix:hover {
     background-color: #393434;
 }
-  
+
 .prix {
     margin-top: 10px;
     font-weight: bold;
@@ -90,4 +100,3 @@ li {
         padding: 0.5rem;
     }
 }
-

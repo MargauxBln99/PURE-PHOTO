@@ -17,25 +17,27 @@
 </head>
 
 <body>
-  <header>
-    <div class="video-container">
-      <video src="" type="video/mp4" autoplay muted loop></video>
-    </div>
-    <br />
-    <nav>
-      <ul>
-        <li><a href="#apropos">A propos</a></li>
-        <li><a href="#galerie">Galerie</a></li>
-        <li><a href="#formules">Formules</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <a href="admin_form.php"><img width="30" height="30" src="https://img.icons8.com/ios/50/000000/settings--v1.png" alt="settings" /></a>
-        </li>
-        <!-- emplacement provisoire -->
-      </ul>
+  <section id="header">
+    <header>
+      <div class="video-container">
+        <video src="" type="video/mp4" autoplay muted loop></video>
+      </div>
       <br />
-    </nav>
-  </header>
+      <nav>
+        <ul>
+          <li><a href="#apropos">A propos</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#formules">Formules</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="admin_form.php"><img width="30" height="30" src="https://img.icons8.com/ios/50/000000/settings--v1.png" alt="settings" /></a>
+          </li>
+          <!-- emplacement provisoire -->
+        </ul>
+        <br />
+      </nav>
+    </header>
+  </section>
 
   <main>
     <section id="apropos">
@@ -102,6 +104,8 @@
       <div id="image-popup">
         <span class="close">&times;</span>
         <img class="popup-image" src="" alt="" />
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
       </div>
       <!-- voir l'image en grand format après le clic -->
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -115,6 +119,22 @@
 
           $(".close").click(function() {
             $("#image-popup").fadeOut();
+          });
+
+          $(".prev").click(function() {
+            var currentImage = $(".popup-image").attr("src");
+            var prevImage = $(".grid-item img[src='" + currentImage + "']").parent().prev().find("img").attr("src");
+            if (prevImage) {
+              $(".popup-image").attr("src", prevImage);
+            }
+          });
+
+          $(".next").click(function() {
+            var currentImage = $(".popup-image").attr("src");
+            var nextImage = $(".grid-item img[src='" + currentImage + "']").parent().next().find("img").attr("src");
+            if (nextImage) {
+              $(".popup-image").attr("src", nextImage);
+            }
           });
         });
       </script>
