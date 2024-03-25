@@ -43,7 +43,7 @@
     <br>
     <br>
     <footer class="footer-container">
-        <p>&copy; Pure Photography - Tous droits réservés</p>
+        <p><strong>&copy;</strong> Pure Photography - Tous droits réservés</p>
     </footer>
 
 </body>

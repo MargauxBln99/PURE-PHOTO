@@ -6,6 +6,27 @@
   margin-bottom: 20px;
 }
 
+.contact-container {
+  position: relative;
+  width: 100%;
+}
+
+.form-image {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: auto;
+}
+
+.form-image-left {
+  left: 0;
+  transform: scaleX(-1); 
+}
+
+.form-image-right {
+  right: 0;
+}
+
 .contact_form {
   position: relative;
   background-color: #fae7de;
@@ -71,5 +92,11 @@
 
   .contact_form input[type="submit"] {
       width: 100%;
+  }
+}
+
+@media (max-width: 1500px) {
+  .form-image {
+    display: none;
   }
 }

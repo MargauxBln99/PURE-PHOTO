@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
 h1 {
     text-align: center;
     font-size: 30px;
@@ -14,13 +19,13 @@ h1 {
 .connexion_form {
     position: relative;
     background-color: #fae7de;
-    overflow: hidden;
     border: 1px solid #5b5352;
-    padding: 20px;
+    border-radius: 4px;
     width: 100%;
     max-width: 500px;
-    margin: 0 auto;
-    border-radius: 4px;
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
     font-size: 19px;
 }
 
@@ -33,21 +38,18 @@ h1 {
 .connexion_form input[type="text"],
 .connexion_form input[type="password"] {
     width: 100%;
-    padding: 5px;
+    padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #5b5352;
     border-radius: 4px;
-}
-
-.connexion_form textarea {
-    height: 100px;
+    box-sizing: border-box;
 }
 
 .connexion_form input[type="submit"] {
     background-color: #5b5352;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     cursor: pointer;
     display: block;
     margin: 0 auto;
@@ -55,6 +57,15 @@ h1 {
     max-width: 250px;
     border-radius: 4px;
     font-size: 19px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.connexion_form input[type="submit"]:hover {
+    background-color: #393434;
+}
+
+.spacer {
+    height: 460px;
 }
 
 @media screen and (max-width: 600px) {

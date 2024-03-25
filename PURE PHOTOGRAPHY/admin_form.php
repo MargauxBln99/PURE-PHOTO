@@ -20,31 +20,9 @@
         <input type="password" name="password" id="password" required /><br />
         <input type="submit" value="Connexion" />
     </form>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div class="spacer"></div>
     <footer class="footer-container">
-        <p>&copy; Pure Photography - Tous droits réservés</p>
+        <p><strong>&copy;</strong> Pure Photography - Tous droits réservés</p>
     </footer>
 </body>
 

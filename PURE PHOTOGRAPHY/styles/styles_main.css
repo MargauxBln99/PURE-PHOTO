@@ -80,8 +80,13 @@ nav ul li a:hover {
         height: 100px;
     }
 
+    .admin-link,
+    .a-propos {
+        display: none;
+    }
+
     nav ul {
-        width: 85%;
+        width: 100%;
         font-size: 18px;
     }
 }

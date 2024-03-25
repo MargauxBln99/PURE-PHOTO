@@ -25,11 +25,11 @@
       <br />
       <nav>
         <ul>
-          <li><a href="#apropos">A propos</a></li>
+          <li class="a-propos"><a href="#apropos">A propos</a></li>
           <li><a href="#galerie">Galerie</a></li>
           <li><a href="#formules">Formules</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li>
+          <li class="admin-link">
             <a href="admin_form.php"><img width="30" height="30" src="https://img.icons8.com/ios/50/000000/settings--v1.png" alt="settings" /></a>
           </li>
           <!-- emplacement provisoire -->
@@ -178,7 +178,7 @@
             <ul>
               <li>
                 Couverture complète incluant les préparatifs, la mairie, la
-                cérémonie, le vin d'honneur et du repas
+                cérémonie, le vin d'honneur et le repas
               </li>
               <li>
                 Traitement individuel des images avec retouches et calibrage
@@ -212,22 +212,26 @@
 
     <section id="contact">
       <h2>Contact</h2>
-      <form action="form_contact.php" method="POST" class="contact_form">
-        <label for="lastname">Nom : </label>
-        <input type="text" name="nom" id="nom" required /><br /><br />
-        <label for="firstname" id="prenom">Prénom : </label>
-        <input type="text" name="prenom" id="nom" required /><br /><br />
-        <label for="email">Email : </label>
-        <input type="email" name="email" id="email" required /><br /><br />
-        <label for="message">Message : </label>
-        <textarea id="message" name="message" required></textarea><br /><br />
-        <input type="submit" value="Envoyer" />
-      </form>
+      <div class="contact-container">
+        <img src="img/corail.jpg" alt="corail" class="form-image form-image-left">
+        <form action=" form_contact.php" method="POST" class="contact_form">
+          <label for="lastname">Nom : </label>
+          <input type="text" name="nom" id="nom" required /><br /><br />
+          <label for="firstname" id="prenom">Prénom : </label>
+          <input type="text" name="prenom" id="nom" required /><br /><br />
+          <label for="email">Email : </label>
+          <input type="email" name="email" id="email" required /><br /><br />
+          <label for="message">Message : </label>
+          <textarea id="message" name="message" required></textarea><br /><br />
+          <input type="submit" value="Envoyer" />
+        </form>
+        <img src="img/corail.jpg" alt="corail" class="form-image form-image-right">
+      </div>
     </section>
   </main>
 
   <footer class="footer-container">
-    <p>&copy; Pure Photography - Tous droits réservés</p>
+    <p><strong>&copy;</strong> Pure Photography - Tous droits réservés</p>
   </footer>
 </body>
 
