@@ -23,6 +23,9 @@
         <label for="titre">Titre : </label>
         <input type="text" name="titre" id="titre" required><br>
 
+        <label for="description">Description de l'image : </label>
+        <input type="text" name="description" id="description" required><br>
+
         <label for="contenu">Contenu : </label>
         <div class="file_input">
             <input type="file" name="fichier" id="fichier" required>
@@ -52,18 +55,7 @@
 
 <?php
 
-$host = "localhost";
-$dbname = "pure-photography";
-$username = "root";
-$password = "";
-
-try {
-    $connexion = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo "Echec de la connexion à la base de données : " . $e->getMessage();
-    exit();
-}
+include 'connexion.php';
 
 // formulaire d'ajout
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajouter_contenu'])) {
