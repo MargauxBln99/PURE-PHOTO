@@ -29,7 +29,7 @@
 
 .contact_form {
   position: relative;
-  background-color: #fae7de;
+  background-color: #fdf9f5;
   overflow: hidden;
   border: 1px solid #5b5352;
   padding: 20px;
@@ -54,12 +54,14 @@
 .contact_form input[type="text"],
 .contact_form input[type="email"],
 .contact_form textarea {
+  font-size: 19px;
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #5b5352;
   border-radius: 4px;
   transition: border-color 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .contact_form textarea {
@@ -67,7 +69,8 @@
 }
 
 .contact_form input[type="submit"] {
-  background-color: #5b5352;
+  background-image: linear-gradient(to bottom, #5b5352, #393434);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -77,11 +80,11 @@
   width: 250px;
   border-radius: 4px;
   font-size: 19px;
-  transition: background-color 0.3s ease-in-out;
 }
 
 .contact_form input[type="submit"]:hover {
-  background-color: #393434;
+  transform: translateY(-2px);
+  transition: transform 0.2s ease-in-out;
 }
 
 @media (max-width: 600px) {
