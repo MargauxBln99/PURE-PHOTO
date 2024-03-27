@@ -21,6 +21,7 @@
     <header>
       <div class="video-container">
         <video src="img/banner.mp4" type="video/mp4" autoplay muted loop></video>
+        <img src="img/logo.jpg" class="logo_responsive" alt="logo">
       </div>
       <br />
       <nav>
@@ -57,6 +58,7 @@
         Nicolas et Kévin 📸
       </p>
     </section>
+    <br />
     <br />
 
     <section id="galerie">
@@ -138,6 +140,7 @@
           });
         });
       </script>
+      <br>
     </section>
 
     <section id="formules">
@@ -202,6 +205,7 @@
           </div>
         </div>
       </div>
+      <br>
       <p>
         Pour chaque formule, nous vous proposons des échanges préparatoires
         afin de planifier le déroulement de la journée. Des frais
