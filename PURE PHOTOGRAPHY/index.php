@@ -20,7 +20,7 @@
   <section id="header">
     <header>
       <div class="video-container">
-        <video src="" type="video/mp4" autoplay muted loop></video>
+        <video src="img/banner.mp4" type="video/mp4" autoplay muted loop></video>
       </div>
       <br />
       <nav>
